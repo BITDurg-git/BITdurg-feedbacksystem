@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ /bitsap/index.php [QSA,L]
+
+#Place Root directory name before /index.php when required
+#eg. /dir_name/index.php
+# else keep it like this: /index.php

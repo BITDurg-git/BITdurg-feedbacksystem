@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost [NC]
+RewriteCond %{HTTP_REFERER} !^http://(www\.)?localhost.*$ [NC]
+RedirectMatch 403 /_app/.+/.*$
+RewriteRule \.(php|html)$ /bitsap/not-found.html [QSA,L]
+
+#Place Root directory name before /index.php when required
+#eg. /dir_name/index.php
+# else keep it like this: /index.php

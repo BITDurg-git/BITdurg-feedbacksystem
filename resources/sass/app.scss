@@ -1,0 +1,196 @@
+@import 'spec/settings/index';
+@import 'spec/tools/index';
+@import "~bootstrap/scss/bootstrap";
+@import 'spec/index';
+@import 'vendor/index';
+
+#loader {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+    z-index: 90000;
+}
+
+#loader.fadeOut {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+    0% { 
+        -webkit-transform: scale(0) 
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes sk-scaleout {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 
+    100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+}
+
+
+img {
+    max-width: 100%;
+}
+
+.menu-btn {
+    padding: 10px 15px;
+    border: none;
+    background: none;
+}
+
+#dataTable tr th:last-of-type {
+    min-width: 95px;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-search--dropdown .select2-search__field,
+.select2-dropdown {
+    border-color: #ced4da !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    height: 35px !important;
+    line-height: 2.4 !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 35px !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 35px !important;
+}
+
+.form-control-file{border: 1px solid #cbcbcb;}
+
+// Sticky
+.content-section {
+    min-height: 2000px;
+  }
+  .sidebar-section {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  
+  
+  .sidebar-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+  }
+  .has-4-items .sidebar-item {
+      height: 25%;
+      &:nth-child(2) { top: 25%; }
+      &:nth-child(3) { top: 50%; }
+      &:nth-child(4) { top: 75%; }
+  }
+  .has-3-items .sidebar-item {
+      height: 33.333333%;
+      &:nth-child(2) { top: 33.333333%; }
+      &:nth-child(3) { top: 66.666666%; }
+  }
+  .has-2-items .sidebar-item {
+      height: 50%;
+      &:nth-child(2) { top: 50%; }
+  }
+  .has-5-items .sidebar-item {
+    height: 20%;
+    &:nth-child(2) { top: 20%; }
+    &:nth-child(3) { top: 40%; }
+    &:nth-child(4) { top: 60%; }
+    &:nth-child(5) { top: 80%; }
+}
+
+.has-6-items .sidebar-item {
+  height: 16.666666%;
+  &:nth-child(2) { top: 16.666666%; }
+  &:nth-child(3) { top: 33.333333%; }
+  &:nth-child(4) { top: 50%; }
+  &:nth-child(5) { top: 66.666666%; }
+  &:nth-child(6) { top: 83.333333%; }
+}
+
+.has-7-items .sidebar-item {
+  height: 14.285714%;
+  &:nth-child(2) { top: 14.285714%; }
+  &:nth-child(3) { top: 28.5714285%; }
+  &:nth-child(4) { top: 42.857142%; }
+  &:nth-child(5) { top: 57.142857%; }
+  &:nth-child(6) { top: 71.428571%; }
+  &:nth-child(7) { top: 85.714285%; }
+}
+
+.has-8-items .sidebar-item {
+  height: 12.5%;
+  &:nth-child(2) { top: 12.5%; }
+  &:nth-child(3) { top: 25%; }
+  &:nth-child(4) { top: 37.5%; }
+  &:nth-child(5) { top: 50%; }
+  &:nth-child(6) { top: 62.5%; }
+  &:nth-child(7) { top: 75%; }
+  &:nth-child(8) { top: 87.5%; }
+}
+
+.has-9-items .sidebar-item {
+  height: 11.111111%;
+  &:nth-child(2) { top: 11.111111%; }
+  &:nth-child(3) { top: 22.222222%; }
+  &:nth-child(4) { top: 33.333333%; }
+  &:nth-child(5) { top: 44.444444%; }
+  &:nth-child(6) { top: 55.555555%; }
+  &:nth-child(7) { top: 66.666666%; }
+  &:nth-child(8) { top: 77.777777%; }
+  &:nth-child(9) { top: 88.888888%; }
+}
+  
+  
+  .has-10-items .sidebar-item {
+      height: 10%;
+    &:nth-child(2) { top: 10%; }
+    &:nth-child(3) { top: 20%; }
+    &:nth-child(4) { top: 30%; }
+    &:nth-child(5) { top: 40%; }
+    &:nth-child(6) { top: 50%; }
+    &:nth-child(7) { top: 60%; }
+    &:nth-child(8) { top: 70%; }
+    &:nth-child(9) { top: 80%; }
+    &:nth-child(10) { top: 90%; }
+  }
+  
+  
+  .make-me-sticky {
+    position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      
+    padding: 0 15px;
+  }
