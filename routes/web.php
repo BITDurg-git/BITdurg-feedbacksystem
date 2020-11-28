@@ -35,6 +35,8 @@ Route::group(['prefix' => 'admin','as' => 'admin' . '.', 'middleware'=>['auth']]
 
     Route::get('/export','ExportController@create');
     Route::post('/export','ExportController@generate');
+
+    Route::get('/test','TestController@sendEmail');
 });
 
 Route::group(['prefix' => 'student','as' => 'student' . '.', 'middleware'=>['auth', 'Role:5']], function () {

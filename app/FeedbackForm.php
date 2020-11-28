@@ -189,14 +189,13 @@ class FeedbackForm extends Model
                 //getting feedback for 1 teacher 1 question
                 $question_sum = 0;
                 $count = 0;
-                $feedbacks = FeedbackSubmission::where([['teacher_name','=',$teacher_name],['question_name','=',$question_name],['feedback_name','=',$feedbackId],['attendence','>',$attendence]])->get();
+                $feedbacks = FeedbackSubmission::where([['teacher_name','=',$teacher_name],['question_name','=',$question_name],['feedback_name','=',$feedbackId],['attendence','>=',$attendence]])->get();
                 if($feedbackForm->getBatch->getDepartment->id == 11){
                     // if($relation->getSubject->main_elective == 1){
-                        $feedbacks = FeedbackSubmission::where([['subject_id','=',$relation->subject_name],['teacher_name','=',$teacher_name],['question_name','=',$question_name],['feedback_name','=',$feedbackId],['attendence','>',$attendence]])->get();
+                        $feedbacks = FeedbackSubmission::where([['subject_id','=',$relation->subject_name],['teacher_name','=',$teacher_name],['question_name','=',$question_name],['feedback_name','=',$feedbackId],['attendence','>=',$attendence]])->get();
                     // }
                 }
                 
-
                 // $student_attempted_new = $student_attempted_new + (count($feedbacks)/count($questions_t));
                 if(count($feedbacks) == 0){
                     continue ;
@@ -213,6 +212,10 @@ class FeedbackForm extends Model
                 ]);
                 $total_points = $total_points + $eqivalent_points;
                 $question_response[] = $question_array;
+
+                // if($teacher_name == 32){
+                //     dd($feedbacks);
+                // }
             }
             $tpi = round((($total_points/(count($questions_t)*5))*25),2);
             $tpi5 = round((($total_points/(count($questions_t)*5))*5),2);
@@ -296,7 +299,6 @@ class FeedbackForm extends Model
             $total_points = 0;
             $report_l[] = $teacher_response;
         }
-
         $academic_session = Setting::findOrFail(7);
         return array(
             'reports_t' => $report_t,

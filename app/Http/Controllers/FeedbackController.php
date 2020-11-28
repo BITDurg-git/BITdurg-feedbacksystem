@@ -73,11 +73,9 @@ class FeedbackController extends Controller
                     $relation_t = $relation_t->merge($relation_e10);
 
 
-
                 }
                 $relation_t_g = Relation::where([['batch_name','=',$feedbackForm->batch_name],['theory_lab','=',0],['group_name','=',$student->group_name],['group_name','!=',null]])->get();
                 $questions_t = Question::where([['theory_lab','=',0]])->orderBy('id','asc')->get();
-
                 $relation_l = [];
                 $questions_l = [];
 
@@ -207,7 +205,12 @@ class FeedbackController extends Controller
                 $feedbackSubmission->attendence = $student->attendence;
                 $feedbackSubmission->feedback_name = $id;
                 $feedbackSubmission->question_name = $question_name;
-                $feedbackSubmission->points = $points;
+                if($points > 5 && $points < 1){
+                    $feedbackSubmission->points = 5;
+                }
+                else{
+                    $feedbackSubmission->points = $points;
+                }
                 $feedbackSubmission->urn = $student->urn;
                 $feedbackSubmission->subject_id = $eachRelation->subject_name;
                 $feedbackSubmission->save();
@@ -229,7 +232,12 @@ class FeedbackController extends Controller
                 $feedbackSubmission->feedback_name = $id;
                 $feedbackSubmission->question_name = $question_name;
                 $feedbackSubmission->subject_id = $eachRelation->subject_name;
-                $feedbackSubmission->points = $points;
+                if($points > 5 && $points < 1){
+                    $feedbackSubmission->points = 5;
+                }
+                else{
+                    $feedbackSubmission->points = $points;
+                }
                 $feedbackSubmission->urn = $student->urn;
                 $feedbackSubmission->save();
             }

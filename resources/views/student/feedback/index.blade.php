@@ -9,8 +9,8 @@
 </div>
 <div class="row">
     <div class="col-md-4 col-lg-4 has-{{count($relation_t)-count($relation_t_g)}}-items">
+        
         @foreach ($relation_t as $eachrelation)
-
         @if ($eachrelation->group_name)
         @if ($eachrelation->group_name == $student->group_name)
         <div class="sidebar-item">

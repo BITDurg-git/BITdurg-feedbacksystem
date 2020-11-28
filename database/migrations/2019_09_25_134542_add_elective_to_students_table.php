@@ -25,6 +25,20 @@ class AddElectiveToStudentsTable extends Migration
 
             $table->foreign('e3_id')->references('id')->on('subjects')->onDelete('cascade');
             $table->foreign('e4_id')->references('id')->on('subjects')->onDelete('cascade');
+
+            $table->unsignedBigInteger('e5_id')->nullable();
+            $table->unsignedBigInteger('e6_id')->nullable();
+            $table->unsignedBigInteger('e7_id')->nullable();
+            $table->unsignedBigInteger('e8_id')->nullable();
+            $table->unsignedBigInteger('e9_id')->nullable();
+            $table->unsignedBigInteger('e10_id')->nullable();
+
+            $table->foreign('e5_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->foreign('e6_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->foreign('e7_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->foreign('e8_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->foreign('e9_id')->references('id')->on('subjects')->onDelete('cascade');
+            $table->foreign('e10_id')->references('id')->on('subjects')->onDelete('cascade');
         });
     }
 
